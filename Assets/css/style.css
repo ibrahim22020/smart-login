@@ -1,0 +1,202 @@
+
+*{
+    font-family: Montserrat;
+    font-weight: bold;
+}
+
+body {
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+}
+
+#container {
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .35);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+#container p {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+
+}
+
+#container span {
+    font-size: 12px;
+}
+
+#container a {
+    color: #333;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+.btn-mine
+{
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #512da8;
+    --bs-btn-border-color: #512da8;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #5f32c9;
+    --bs-btn-hover-border-color: #522da846;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #5f32c9;
+    --bs-btn-active-border-color: #5f32c9;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #512da8;
+    --bs-btn-disabled-border-color: #512da8;
+}
+#container button
+{
+    font-size: 12px;
+    letter-spacing: .5px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+#container button.hidden
+{
+    background-color: transparent;
+    border-color: #fff;
+}
+#container form
+{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    height: 100%;
+}
+
+.form-container
+{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+.sign-in
+{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+.container.active .sign-in
+{
+    transform: translateX(100%);
+
+}
+.sign-up
+{
+    left:0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+.container.active .sign-up
+{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move .6s;
+}
+@keyframes move{
+    0%,49.44%
+    {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%,100%
+    {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+.social-icons a
+{
+    border: 1px solid #ccc;
+    border-radius: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 4px;
+    width: 40px;
+    height: 40px;
+}
+.toggle-container
+{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    background-color: tomato;
+    transition: all .6s ease-in-out;
+    z-index: 10000;
+    border-radius:150px 0  0 100px;
+}
+.container.active .toggle-container
+{
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0 ;
+}
+.toggle
+{
+    background-color: #512da8;
+    height: 100%;
+    background: linear-gradient(to right , #5c6bc0,#512da8);
+    color: #fff;
+    position: relative;
+    left: -100%;
+    width: 200%;
+    transform: translateX(0);
+    transition:all 0.6s ease-in-out;
+}
+.container.active .toggle
+{
+    transform:translateX(50%);
+}
+.toggle-panel
+{
+    position:absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left
+{
+    transform: translateX(-200%);
+}
+.container.active .toggle-left
+{
+    transform: translateX(0);
+}
+.toggle-right
+{
+    right: 0;
+    transform: translateX(0);
+}
+.container.active .toggle-right
+{
+    transform: translateX(200%);
+}
